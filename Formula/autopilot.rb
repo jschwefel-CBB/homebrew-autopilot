@@ -9,11 +9,6 @@ class Autopilot < Formula
     sha256 "7832caa6764b8eea4684b4a920641d41cbad9f6ac8bb4fdc8bf95eebbde4a636"
   end
 
-  on_intel do
-    url "https://github.com/jschwefel-CBB/autopilot-macos/releases/download/v#{version}/autopilot-#{version}-x86_64.tar.gz"
-    sha256 "0000000000000000000000000000000000000000000000000000000000000000"
-  end
-
   def install
     bin.install "autopilot"
     bin.install "AutopilotMCP"
