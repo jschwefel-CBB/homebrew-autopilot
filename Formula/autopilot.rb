@@ -20,6 +20,9 @@ class Autopilot < Formula
     # finds them (it looks for share/doc/autopilot next to the binary) and
     # `brew --prefix autopilot` / `brew home` expose them.
     doc.install Dir["docs/*"]
+    # The cockpit GUI app — installed next to the CLI, consistent with the drag
+    # helper. Launch with `open "#{HOMEBREW_PREFIX}/bin/AutopilotCockpit.app"`.
+    bin.install "AutopilotCockpit.app"
   end
 
   def caveats
@@ -39,6 +42,10 @@ class Autopilot < Formula
         autopilot docs manual     # print the full user manual
         autopilot docs authoring  # how to write a test plan
       or browse them at #{HOMEBREW_PREFIX}/share/doc/autopilot.
+
+      The AutoPilot Cockpit GUI (Inspect / Author / Run) is installed too:
+        open #{HOMEBREW_PREFIX}/bin/AutopilotCockpit.app
+      Grant it Accessibility permission on first launch to drive other apps.
     EOS
   end
 
